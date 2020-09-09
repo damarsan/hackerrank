@@ -8,11 +8,15 @@ import sys
 # Complete the miniMaxSum function below.
 def miniMaxSum(arr):
     sum = 0
-    for i in range(len(arr)):
-        sum +=arr[i]
-    return sum
+    arr_sum = []
+    for i in arr:
+        arr.remove(i)
+        for j in arr:
+            sum +=j
+        arr_sum.append(sum)
+    return arr_sum
 
 if __name__ == '__main__':
-    arr = [1,2,3,4,10,11]
+    arr = [1,2,3,4,5]
     # arr = list(map(int, input().rstrip().split()))
     print(miniMaxSum(arr))
